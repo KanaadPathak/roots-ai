@@ -5,16 +5,18 @@ if ($method == "POST") {
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
 
-	$text = $json->result->parameters->text;	
+	$text = $json->result->parameters->PlantStats;	
 
 	switch ($text) {
-		case 'hi':
-			$speech = "Hello there.";
+		case 'moisture':
+			$speech = "The current moisture in the soil is too low, please water the plant!";
 			break;
-		case 'bye':
-			$speech = "Thank you for visiting";
+		case 'light':
+			$speech = "The plant is getting enough light!";
 			break;
-
+		case 'co2':
+			$speech = "The carbon-di-oxide levels are sufficient in the plant."	
+			break;
 		default:
 			$speech = "Sorry I dont underatand that, Please try again";# code...
 			break;
