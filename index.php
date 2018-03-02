@@ -15,7 +15,7 @@ if ($method == "POST") {
 			$speech = "The plant is getting enough light!";
 			break;
 		case 'co2':
-			$speech = "The carbon-di-oxide levels are sufficient in the plant."	
+			$speech = "The carbon-di-oxide levels are sufficient in the plant.";	
 			break;
 		default:
 			$speech = "Sorry I dont underatand that, Please try again";# code...
