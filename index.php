@@ -22,7 +22,8 @@ function checkValue ($givenValue,$threshold,$thing){
 
 	else
 		$speech = "The $thing value is just correct.";
-
+	
+return $speech;
 }
 
 
@@ -35,19 +36,15 @@ if ($method == "POST") {
 
 	switch ($text) {
 		case 'moisture':
-			$value = array_rand($moistureValues);
-			$current = $moistureValues($value);
-			checkValue($current,0.56,"moisture");
+			$speech = checkValue($moistureValues[2],0.56,"moisture");
 			break;
 		case 'light':
-			$value = array_rand($lightValues);
-			$current = $moistureValues($value);
-			checkValue($current,16,"light");
+			
+			$speech =checkValue($lightValues[3],16,"light");
 			break;
 		case 'co2':
-			$value = array_rand($co2Values);
-			$current = $moistureValues($value);
-			checkValue($current,0.56,"carbon-di-oxide");	
+			
+			$speech = checkValue($co2Values[4],0.56,"carbon-di-oxide");	
 			break;
 		default:
 			$speech = "Sorry I dont underatand that, Please try again";# code...
