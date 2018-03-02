@@ -8,20 +8,20 @@ function checkValue ($givenValue,$threshold,$thing){
 	{
 		$speech =  "The current value of $thing is too low.";
 			if ($thing == 'water') {
-				$speech  = "Please add more water."
+				$speech  = "Please add more water.";
 			}
 
 			elseif ($thing == 'light') {
-				$speech = "Try moving the plant to a suitable location with enough light."
+				$speech = "Try moving the plant to a suitable location with enough light.";
 			}
 	}
 
 	elseif ($thing > $threshold) {
-		$speech = "The $thing level is too high!"
+		$speech = "The $thing level is too high!";
 	}
 
 	else
-		$speech = "The $thing value is just correct."
+		$speech = "The $thing value is just correct.";
 
 }
 
