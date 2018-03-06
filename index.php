@@ -21,11 +21,11 @@ function checkValue ($givenValue,$threshold,$thing){
 	}
 
 	elseif ($thing > $threshold) {
-		$speech = "The $thing sensor value is"."$givenValue"."\n Please refer to the growers guide\n";
+		$speech = "The $thing sensor value is "."$givenValue, which is too high"."\n Please refer to the growers guide\n";
 	}
 
 	else
-		$speech = "The plant is getting enough $thing, the current value for your reference is "."$givenValue";
+		$speech = "The conditions for $thing are correct, the current value for your reference is "."$givenValue";
 	
 return $speech;
 }
@@ -52,7 +52,7 @@ if ($method == "POST") {
 			$speech = checkValue($co2Values[$random_keys[0]],0.56,"carbon-di-oxide");	
 			break;
 		case 'temperature':
-			$speech = checkValue(24,19,"Soil Temperature");
+			$speech = checkValue(24,19,"temperature");
 			break;	
 		default:
 			$speech = "Sorry I dont underatand that, Please try again";# code...
