@@ -7,7 +7,7 @@ function checkValue ($givenValue,$threshold,$thing){
 	if ($givenValue < $threshold)
 	{
 		$speech =  "The current value of $thing is "."$givenValue\n";
-			if ($thing == 'water') {
+			if ($thing == 'moisture') {
 				$speech  = "Please add more water.";
 			}
 
@@ -72,7 +72,7 @@ if ($method == "POST") {
 
 else
 {
-	echo "Method not allowed";
+	echo "App is currently running, GET request not accepted.";
 }
 
 
