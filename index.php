@@ -16,7 +16,7 @@ function checkValue ($givenValue,$threshold,$thing){
 			}
 
 			elseif ($thing == 'temperature'){
-				$speech = "Try moving the plant to a cooler location."
+				$speech = "Try moving the plant to a cooler location.";
 			}
 	}
 
