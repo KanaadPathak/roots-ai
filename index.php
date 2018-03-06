@@ -69,7 +69,7 @@ if ($method == "POST") {
 
 else
 {
-	echo "Method not allowed";
+	echo "Successfully deployed.";
 }
 
 
