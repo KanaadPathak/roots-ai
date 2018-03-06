@@ -53,6 +53,9 @@ if ($method == "POST") {
 			break;
 		case 'temperature':
 			$speech = checkValue(24,19,"temperature");
+			break;
+		case 'value':
+			$speech = "Please specify what value you'd like to know, I can tell CO2, Moisture, Light and Soil Temperature values ";
 			break;	
 		default:
 			$speech = "Sorry I dont underatand that, Please try again";# code...
@@ -69,7 +72,7 @@ if ($method == "POST") {
 
 else
 {
-	echo "Successfully deployed.";
+	echo "Method not allowed";
 }
 
 
