@@ -6,7 +6,7 @@ $co2Values = array(3.12,4.2,6.7,2.5);
 function checkValue ($givenValue,$threshold,$thing){
 	if ($givenValue < $threshold)
 	{
-		$speech =  "The current value of $thing is too low.";
+		$speech =  "The current value of $thing is"."$givenValue\n";
 			if ($thing == 'water') {
 				$speech  = "Please add more water.";
 			}
@@ -14,14 +14,18 @@ function checkValue ($givenValue,$threshold,$thing){
 			elseif ($thing == 'light') {
 				$speech = "Try moving the plant to a suitable location with enough light.";
 			}
+
+			elseif ($thing == 'temperature'){
+				$speech = "Try moving the plant to a cooler location."
+			}
 	}
 
 	elseif ($thing > $threshold) {
-		$speech = "The $thing level is too high!";
+		$speech = "The $thing sensor value is"."$givenValue"."\n Please refer to the growers guide\n";
 	}
 
 	else
-		$speech = "The $thing value is just correct.";
+		$speech = "The plant is getting enough $thing";
 	
 return $speech;
 }
@@ -36,16 +40,20 @@ if ($method == "POST") {
 
 	switch ($text) {
 		case 'moisture':
-			$speech = checkValue($moistureValues[2],0.56,"moisture");
+			$random_keys=array_rand($moistureValues,3);
+			$speech = checkValue($moistureValues[$random_keys[0]],0.56,"moisture");
 			break;
 		case 'light':
-			
-			$speech =checkValue($lightValues[3],16,"light");
+			$random_keys=array_rand($lightValues,3);
+			$speech =checkValue($lightValues[$random_keys[0]],16,"light");
 			break;
 		case 'co2':
-			
-			$speech = checkValue($co2Values[4],0.56,"carbon-di-oxide");	
+			$random_keys=array_rand($co2Values,3);
+			$speech = checkValue($co2Values[$random_keys[0]],0.56,"carbon-di-oxide");	
 			break;
+		case 'temperature':
+			$speech = checkValue(24,19,"Soil Temperature");
+			break;	
 		default:
 			$speech = "Sorry I dont underatand that, Please try again";# code...
 			break;
