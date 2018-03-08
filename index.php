@@ -6,17 +6,17 @@ $co2Values = array(3.12,4.2,6.7,2.5,2.4,4.6);
 function checkValue ($givenValue,$threshold,$thing){
 	if ($givenValue < $threshold)
 	{
-		$speech =  "The current value of $thing is "."$givenValue\n";
+		$speech2 =  "The current value of $thing is "."$givenValue\n";
 			if ($thing == 'moisture') {
-				$speech  = "Please add more water.";
+				$speech  = "Please add more water."."$speech2";
 			}
 
 			elseif ($thing == 'light') {
-				$speech = "Try moving the plant to a suitable location with enough light.";
+				$speech = "Try moving the plant to a suitable location with enough light."."$speech2";
 			}
 
 			elseif ($thing == 'temperature'){
-				$speech = "Try moving the plant to a cooler location.";
+				$speech = "Try moving the plant to a cooler location."."$speech2";
 			}
 	}
 
