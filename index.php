@@ -8,15 +8,15 @@ function checkValue ($givenValue,$threshold,$thing){
 	{
 		$speech2 =  "The current value of $thing is "."$givenValue\n";
 			if ($thing == 'moisture') {
-				$speech  = "Please add more water."."$speech2";
+				$speech  = "Please add more water."." $speech2";
 			}
 
 			elseif ($thing == 'light') {
-				$speech = "Try moving the plant to a suitable location with enough light."."$speech2";
+				$speech = "Try moving the plant to a suitable location with enough light."." $speech2";
 			}
 
 			elseif ($thing == 'temperature'){
-				$speech = "Try moving the plant to a cooler location."."$speech2";
+				$speech = "Try moving the plant to a cooler location."." $speech2 °F";
 			}
 	}
 
